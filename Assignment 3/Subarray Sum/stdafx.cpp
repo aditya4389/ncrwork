@@ -1,5 +1,5 @@
 // stdafx.cpp : source file that includes just the standard includes
-// Count in Array.pch will be the pre-compiled header
+// Subarray Sum.pch will be the pre-compiled header
 // stdafx.obj will contain the pre-compiled type information
 
 #include "stdafx.h"

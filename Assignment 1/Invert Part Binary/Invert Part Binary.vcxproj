@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{74E469AB-DCC2-4B02-BFB6-4DAE8465FFEA}</ProjectGuid>
+    <ProjectGuid>{0279913D-458A-4F1A-98EF-05A27749C2A6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CountinArray</RootNamespace>
+    <RootNamespace>InvertPartBinary</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -149,7 +149,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Count in Array.cpp" />
+    <ClCompile Include="Invert Part Binary.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

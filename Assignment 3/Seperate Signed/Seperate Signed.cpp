@@ -2,42 +2,35 @@
 #include <iostream>
 
 using namespace std;
+
 int main()
 {
 	int a[100];
-	int i = 0, j = 0, n;
-	printf("Enter the size of array\n");
+	int i = 0, j = 0, n = 0;
+	cout << "Enter tyhe size of the array\n";
 	cin >> n;
-	printf("Enter the elements of array\n");
+	printf("Enter an array of signed integers\n");
 	for (i = 0; i < n; i++)
 	{
 		cin >> a[i];
 	}
-	printf("\nThe array before modifying is: \n");
-	for (i = 0; i < n; i++)
+	for (j = 0; j < n; j++)
 	{
-		printf("%d ", a[i]);
-	}
-
-
-	for (i = 0; i < n; i++)
-	{
-		for (j = 0; j < n; j++)
+		for (i = 0; i < n-1; i++)
 		{
-			if (a[i] < a[j])
+			if (a[i] > 0 && a[i + 1] < 0)
 			{
-				a[i] = a[i] + a[j];
-				a[j] = a[i] - a[j];
-				a[i] = a[i] - a[j];
+				a[i] = a[i] + a[i + 1];
+				a[i + 1] = a[i] - a[i + 1];
+				a[i] = a[i] - a[i + 1];
 			}
 		}
 	}
-	printf("\nThe array after modifying is: \n");
+	cout << "\nThe array after arranging is: ";
 	for (i = 0; i < n; i++)
 	{
-		printf("%d ", a[i]);
+		cout << a[i]<<" ";
 	}
-
 	system("pause");
 	return 0;
 }

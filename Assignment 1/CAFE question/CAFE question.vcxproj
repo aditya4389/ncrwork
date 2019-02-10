@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{508EF012-6EB3-49D3-BAA0-B01B0B678C22}</ProjectGuid>
+    <ProjectGuid>{D683196C-4E9C-42D2-B0D5-F8B90DE1099F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Charmatching</RootNamespace>
+    <RootNamespace>CAFEquestion</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -149,7 +149,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Char matching.cpp" />
+    <ClCompile Include="CAFE question.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

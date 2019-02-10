@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BF686802-5B2F-4277-BE73-1E8C04641D92}</ProjectGuid>
+    <ProjectGuid>{7670BADB-6A37-4D30-A1DD-BE06D414F3BB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Printmissing</RootNamespace>
+    <RootNamespace>Rotatestring</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -149,7 +149,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Print missing.cpp" />
+    <ClCompile Include="Rotate string.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

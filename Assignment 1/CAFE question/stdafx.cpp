@@ -1,5 +1,5 @@
 // stdafx.cpp : source file that includes just the standard includes
-// Char matching.pch will be the pre-compiled header
+// CAFE question.pch will be the pre-compiled header
 // stdafx.obj will contain the pre-compiled type information
 
 #include "stdafx.h"

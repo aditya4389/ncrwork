@@ -1,48 +1,49 @@
-// Sort Strings.cpp : Defines the entry point for the console application.
+// test.cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
-#include <iostream>
-#include <string.h>
+#include<iostream>
+
+
 using namespace std;
+
 
 int main()
 {
-	char ch[100][100] , temp[100];
-	cout << "Enter the count of strings\n";
-	int n,m;
-	cin >> n >> m;
-	cout << "Enter the strings\n";
-	for (int i = 0; i < n; i++)
+	char *a[4];
+	int n, i, j;
+	int x, y, k;
+	for (i = 0; i < 4; i++)
 	{
-		for (int j = 0; j < m; j++)
+		cin >> n;
+		a[i] = (char *)malloc(n * sizeof(char*));
+		scanf("%s", a[i]);
+		/*if (a[i] == NULL)
 		{
-			cin >> ch[i][j];
+		for (j = i; j >= 0; j--)
+		{
+		free(a[i]);
 		}
+		return -1;
+		}*/
 	}
-
-	for (int i = 0; i < n; i++)
+	for (x = 0; x < 4; x++)
 	{
-		for (int j = 0; j < n; j++)
+		for (y = 0; y < 4 - x - 1; y++)
 		{
-			if (strcmp(ch[j], ch[j + 1]) > 0)
+			if (strcmp(a[y], a[y + 1]) > 0)
 			{
-				strcpy_s(temp, ch[j]);
-				strcpy_s(ch[j], ch[j+1]);
-				strcpy_s(ch[j+1], temp);
+				char *temp;
+				temp = a[y];
+				a[y] = a[y + 1];
+				a[y + 1] = temp;
 			}
 		}
 	}
-	cout << "Strings after sorting are: \n";
-	for (int i = 0; i < n; i++)
+	for (k = 0; k < 4; k++)
 	{
-		for (int j = 0; j < m; j++)
-		{
-			cout << ch[i][j];
-		}
-		cout << "\n";
+		cout << a[k] << "\n";
 	}
 	system("pause");
-    return 0;
+	return 0;
 }
-

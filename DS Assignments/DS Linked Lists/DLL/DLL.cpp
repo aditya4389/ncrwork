@@ -1,4 +1,4 @@
-// pgm-1.cpp : Defines the entry point for the console application.
+// DLL.cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
@@ -9,12 +9,13 @@ struct node
 {
 	int data;
 	struct node *next;
+	struct node *prev;
 }*first, *curr;
 
-class ll
+class dll
 {
 public:
-	ll()
+	dll()
 	{
 		first = NULL;
 	}
@@ -33,28 +34,31 @@ public:
 	void ReverseLL();
 };
 
-void ll::InsertBegin(int ele)
+void dll::InsertBegin(int ele)
 {
 	struct node *temp;
 	temp = new node;
 
 	temp->data = ele;
 	temp->next = NULL;
+	temp->prev = NULL;
 
 	if (first == NULL)
 	{
 		first = temp;
 		first->next = NULL;
+		first->prev = NULL;
 	}
 	else
 	{
 		temp->next = first;
 		first = temp;
+		temp->prev = NULL;
 	}
 
 }
 
-void ll::InsertAfter(int ele, int e)
+void dll::InsertAfter(int ele, int e)
 {
 	curr = first;
 	int flag = 0;
@@ -73,15 +77,18 @@ void ll::InsertAfter(int ele, int e)
 		temp = new node;
 		temp->data = ele;
 		temp->next = NULL;
+		temp->prev = NULL;
 
 		temp->next = curr->next;
+		temp->prev = curr;
+		curr->next->prev = temp;
 		curr->next = temp;
 	}
 	else
 		cout << "Element Not Found\n";
 }
 
-void ll::InsertBefore(int ele, int e)
+void dll::InsertBefore(int ele, int e)		
 {
 	curr = first;
 	int flag = 0;
@@ -100,20 +107,24 @@ void ll::InsertBefore(int ele, int e)
 		temp = new node;
 		temp->data = ele;
 		temp->next = NULL;
+		temp->prev = NULL;
 
 		temp->next = curr->next;
+		temp->prev = curr;
+		curr->next->prev = temp;
 		curr->next = temp;
 	}
 	else
 		cout << "Element Not Found\n";
 }
 
-void ll::InsertEnd(int ele)
+void dll::InsertEnd(int ele)
 {
 	struct node *temp;
 	temp = new node;
 	temp->data = ele;
 	temp->next = NULL;
+	temp->prev = NULL;
 
 	curr = first;
 	while (curr->next != NULL)
@@ -121,24 +132,30 @@ void ll::InsertEnd(int ele)
 		curr = curr->next;
 	}
 	curr->next = temp;
-	curr = temp;
+	temp->prev = curr;
+	temp->next = NULL;
 }
 
-int ll::DeleteBegin()
+int dll::DeleteBegin()
 {
 	curr = first;
-	if (curr != NULL)
+	if (curr == NULL)
+		cout << "Empty List\n";
+	else
 	{
 		int ret = curr->data;
 		first = curr->next;
+		if (first != NULL)
+		{
+			first->prev = NULL;
+		}
+		free(curr);
 		return ret;
 	}
-	else
-		cout << "Empty List\n";
 	return -1;
 }
 
-int ll::DeleteSpecific(int ele)
+int dll::DeleteSpecific(int ele)
 {
 	curr = first;
 	if (curr == NULL)
@@ -161,8 +178,21 @@ int ll::DeleteSpecific(int ele)
 		if (flag == 1)
 		{
 			ret = curr->data;
-			curr1->next = curr->next;
-			curr->next = NULL;
+			if (curr->next != NULL)
+			{
+				curr1->next = curr->next;
+				curr->next->prev = curr1;
+				curr->next = NULL;
+				curr->prev = NULL;
+				free(curr);
+			}
+			else if (curr == first)
+			{
+				curr->next = NULL;
+				curr->prev = NULL;
+				free(curr);
+			}
+
 		}
 		else
 		{
@@ -174,31 +204,31 @@ int ll::DeleteSpecific(int ele)
 	return -1;
 }
 
-int ll::DeleteEnd()
+int dll::DeleteEnd()
 {
 	curr = first;
-	int ret;
 	if (curr == NULL)
-		cout << "List is Empty\n";
+		cout << "Empty List\n";
+	if (first->next == NULL)
+	{
+		DeleteBegin();
+	}
 	else
 	{
+		int ret;
 		while (curr->next->next != NULL)
 		{
 			curr = curr->next;
 		}
 		ret = curr->next->data;
 		curr->next = NULL;
+		free(curr);
 		return ret;
 	}
 	return -1;
 }
 
-void ll::ReverseLL()
-{
-
-}
-
-void ll::DisplayForward()
+void dll::DisplayForward()
 {
 	if (first == NULL)
 		cout << "Empty List\n";
@@ -207,7 +237,7 @@ void ll::DisplayForward()
 		curr = first;
 		while (curr != NULL)
 		{
-			cout << curr->data << "-->";
+			cout << curr->data << "<-->";
 			curr = curr->next;
 		}
 		cout << "NULL\n";
@@ -219,10 +249,10 @@ void print(struct node * curr)
 	if (curr != NULL)
 	{
 		print(curr->next);
-		cout << curr->data << "-->";
+		cout << curr->data << "<-->";
 	}
 }
-void ll::DisplayBack()
+void dll::DisplayBack()
 {
 	if (first != NULL)
 		print(first);
@@ -231,10 +261,10 @@ void ll::DisplayBack()
 
 int main()
 {
-	ll obj;
+	dll obj;
 	while (1)
 	{
-		cout << "\n1-Insert  2-Delete  3-Display  4-Reverse  5-Exit: ";
+		cout << "\n1-Insert  2-Delete  3-Display  4-Exit: ";
 		int ch;
 		cin >> ch;
 		switch (ch)
@@ -276,18 +306,18 @@ int main()
 			{
 			case 1:
 				del = obj.DeleteBegin();
-				cout << "Deleted Element is: " << del << "\n";
+				cout << "Deleted the Element \n";
 				break;
 			case 2:
 				int ele;
 				cout << "Enter Element to delete: ";
 				cin >> ele;
 				del2 = obj.DeleteSpecific(ele);
-				cout << "Deleted Element is: " << del2 << "\n";
+				cout << "Deleted the Element \n";
 				break;
 			case 3:
 				del1 = obj.DeleteEnd();
-				cout << "Deleted Element is: " << del1 << "\n";
+				cout << "Deleted the Element \n";
 				break;
 			}
 			break;
@@ -295,6 +325,7 @@ int main()
 			cout << "\n1-DisplayForward  2-DisplayBackward : ";
 			int c2;
 			cin >> c2;
+			cout << "\n";
 			if (c2 == 1)
 				obj.DisplayForward();
 			else
@@ -303,9 +334,6 @@ int main()
 			}
 			break;
 		case 4:
-			obj.ReverseLL();
-			break;
-		case 5:
 			exit(0);
 		}
 	}

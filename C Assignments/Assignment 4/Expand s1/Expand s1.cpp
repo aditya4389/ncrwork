@@ -9,6 +9,7 @@ using namespace std;
 int main()
 {
 	char s1[100], s2[100];
+	cout << "Enter the string\n";
 	scanf("%s", s1);
 	int len = 0;
 	while (s1[len] != '\0')
@@ -54,10 +55,10 @@ int main()
 			}
 		}
 	}
-	for (int i = 0; i < len; i++)
+	/*for (int i = 0; i < len; i++)
 	{
 		cout << s1[i];
-	}
+	}*/
 	cout << "\nThe expanded string is: ";
 	for (int i = 0; i < j; i++)
 	{

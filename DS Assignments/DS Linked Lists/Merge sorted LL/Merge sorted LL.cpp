@@ -55,23 +55,80 @@ void display(struct node *first)
 
 struct node* mergeLists(struct node *h1, struct node *h2)
 {
-	struct node *p1, *p2;
-	p1 = h1;
-	p2 = h2;
+	struct node *h3 = NULL;
 	if (h1 == NULL)
 		return h2;
 	if (h2 == NULL)
 		return h1;
 	if (h1 == NULL && h2 == NULL)
 		return NULL;
-	else
-	{
-		if (h1->data < h2->data)
+		while (h1 != NULL && h2 != NULL)
 		{
-			h1->next = p2;
-			h2 = h2->nwxt;
+			temp = h3;
+			node *n = new node;
+			n->next = NULL;
+			if (h1->data < h2->data)
+			{
+				n->data = h1->data;
+				if (h3 == NULL)
+				{
+					h3 = n;
+				}
+				else
+				{
+					while(temp->next!=NULL)
+					{
+						temp = temp->next;
+					}
+					temp->next = n;
+				}
+				h1 = h1->next;
+			}
+			else
+			{
+				n->data = h2->data;
+				if (h3 == NULL)
+				{
+					h3 = n;
+				}
+				else
+				{
+					while (temp->next != NULL)
+					{
+						temp = temp->next;
+					}
+					temp->next = n;
+				}
+				h2 = h2->next;
+			}
 		}
-	}
+		if (h1 != NULL)
+		{
+			temp = h3;
+			while (temp->next != NULL)
+			{
+				temp = temp->next;
+			}
+			while (h1->next != NULL)
+			{
+				temp->next = h1;
+				h1 = h1->next;
+			}
+		}
+		if (h2 != NULL)
+		{
+			temp = h3;
+			while (temp->next != NULL)
+			{
+				temp = temp->next;
+			}
+			while (h2->next != NULL)
+			{
+				temp->next = h2;
+				h2 = h2->next;
+			}
+		}
+	return h3;
 }
 
 int main()

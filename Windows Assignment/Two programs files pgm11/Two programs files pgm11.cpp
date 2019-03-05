@@ -8,14 +8,19 @@
 
 using namespace std;
 
+SECURITY_ATTRIBUTES securityAttribute;
+
 int main()
 {
+	ZeroMemory(&securityAttribute, sizeof(securityAttribute));
+	securityAttribute.bInheritHandle = TRUE;
+
 	LPTSTR fileName = TEXT("File");
 	HANDLE newFileHandle = CreateFile(
 		fileName,// name of the file 
 		GENERIC_READ | GENERIC_WRITE, //Access mode for the file
 		0, // shared mode
-		NULL, //Security Attribute
+		&securityAttribute, //Security Attribute
 		CREATE_ALWAYS, //Creation desposition
 		FILE_ATTRIBUTE_NORMAL, //Flags and Attributes
 		NULL //H template
@@ -53,7 +58,7 @@ int main()
 		fileName,// name of the file 
 		GENERIC_READ | GENERIC_WRITE, //Access mode for the file
 		0, // shared mode
-		NULL, //Security Attribute
+		&securityAttribute, //Security Attribute
 		OPEN_EXISTING, //Creation desposition
 		FILE_ATTRIBUTE_NORMAL, //Flags and Attributes
 		NULL //H template

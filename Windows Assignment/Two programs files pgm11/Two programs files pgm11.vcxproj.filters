@@ -32,8 +32,5 @@
     <ClCompile Include="Two programs files pgm11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Two programs files pgm11-2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <script>
+
+        num1 = 0;
+        count = 0;
+
+        function add()
+        {
+            num2 = document.getElementById("num").value;
+            document.getElementById('ops').value = document.getElementById('ops').value + "+" + +num2;
+            document.getElementById('num').value = '';
+            num1 += +num2;
+            display();
+        }
+        function display()
+        {
+            document.getElementById("result").innerHTML = +num1;
+        }
+
+        function sub() {
+            num2 = document.getElementById("num").value;
+            document.getElementById('ops').value = document.getElementById('ops').value + "-" + +num2;
+            document.getElementById('num').value = '';
+            num1 -= +num2;
+            display();
+        }
+        function mul() {
+            num2 = document.getElementById("num").value;
+            document.getElementById('ops').value = document.getElementById('ops').value + "*" + +num2;
+            document.getElementById('num').value = '';
+            num1 *= +num2;
+            display();
+        }
+        function div() {
+            num2 = document.getElementById("num").value;
+            document.getElementById('ops').value = document.getElementById('ops').value + "/" + +num2;
+            document.getElementById('num').value = '';
+            num1 /= +num2;
+            display();
+        }
+        function result()
+        {
+            alert("hi");
+
+        }
+        function clear()
+        {
+            alert("hi");
+            document.getElementById('ops').value = '';
+        }
+    </script>
+
+</head>
+<body align="center">
+    <form action="POST" align="center">
+        <label>Enter Number: </label>
+        <input id="num" type="number" required /><br /><br />
+        <!--<label>Enter Number2: </label>
+        <input id="number2" type="number" required /><br /><br />-->
+        <input id="button+" type="button" value="+" onclick="add()" />
+        <input id="button-" value="-" type="button" onclick="sub()" />
+        <input id="button*" value="*" type="button" onclick="mul()" />
+        <input id="button/" value="/" type="button" onclick="div()" />
+        <input id="button=" type="button" value="=" onclick="result()" />
+        <input id="buttonc" type="button" value="C" onclick="result()" /><br /><br />
+        <label>Result: </label>
+        <output id="result"></output><br /><br />
+        <lable>Operations: </lable>
+        <textarea id="ops" rows="10"></textarea>
+    </form>
+
+
+</body>
+</html>

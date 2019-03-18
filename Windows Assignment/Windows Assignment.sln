@@ -33,6 +33,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inherit handle pgm10", "Inh
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Two programs files pgm11", "Two programs files pgm11\Two programs files pgm11.vcxproj", "{DCB12B2A-AA94-4FBB-9CE6-7F1D915DB667}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shared integer part-2", "shared integer part-2\shared integer part-2.vcxproj", "{49D433BB-797E-4AEF-8439-2F62698FF706}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Two program files pgm11-2", "Two program files pgm11-2\Two program files pgm11-2.vcxproj", "{B0109295-2CDE-4C61-B297-E72646BE8CEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -161,6 +165,22 @@ Global
 		{DCB12B2A-AA94-4FBB-9CE6-7F1D915DB667}.Release|x64.Build.0 = Release|x64
 		{DCB12B2A-AA94-4FBB-9CE6-7F1D915DB667}.Release|x86.ActiveCfg = Release|Win32
 		{DCB12B2A-AA94-4FBB-9CE6-7F1D915DB667}.Release|x86.Build.0 = Release|Win32
+		{49D433BB-797E-4AEF-8439-2F62698FF706}.Debug|x64.ActiveCfg = Debug|x64
+		{49D433BB-797E-4AEF-8439-2F62698FF706}.Debug|x64.Build.0 = Debug|x64
+		{49D433BB-797E-4AEF-8439-2F62698FF706}.Debug|x86.ActiveCfg = Debug|Win32
+		{49D433BB-797E-4AEF-8439-2F62698FF706}.Debug|x86.Build.0 = Debug|Win32
+		{49D433BB-797E-4AEF-8439-2F62698FF706}.Release|x64.ActiveCfg = Release|x64
+		{49D433BB-797E-4AEF-8439-2F62698FF706}.Release|x64.Build.0 = Release|x64
+		{49D433BB-797E-4AEF-8439-2F62698FF706}.Release|x86.ActiveCfg = Release|Win32
+		{49D433BB-797E-4AEF-8439-2F62698FF706}.Release|x86.Build.0 = Release|Win32
+		{B0109295-2CDE-4C61-B297-E72646BE8CEB}.Debug|x64.ActiveCfg = Debug|x64
+		{B0109295-2CDE-4C61-B297-E72646BE8CEB}.Debug|x64.Build.0 = Debug|x64
+		{B0109295-2CDE-4C61-B297-E72646BE8CEB}.Debug|x86.ActiveCfg = Debug|Win32
+		{B0109295-2CDE-4C61-B297-E72646BE8CEB}.Debug|x86.Build.0 = Debug|Win32
+		{B0109295-2CDE-4C61-B297-E72646BE8CEB}.Release|x64.ActiveCfg = Release|x64
+		{B0109295-2CDE-4C61-B297-E72646BE8CEB}.Release|x64.Build.0 = Release|x64
+		{B0109295-2CDE-4C61-B297-E72646BE8CEB}.Release|x86.ActiveCfg = Release|Win32
+		{B0109295-2CDE-4C61-B297-E72646BE8CEB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

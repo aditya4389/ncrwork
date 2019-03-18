@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/43CD34DD-FAC2-6747-8DE1-BBFA2C2705DE/main.js" charset="UTF-8"></script>
+    <script src="jquery-3.3.1.js">
+    </script>
+</head>
+<body>
+    Enter text:<input type="text" id="text" />
+    <p id="newtext">Hi </p>
+    <script>
+
+$("#text").change(function(){
+	
+		var str = $("#text").val()
+		$("#newtext").append(str);
+	});
+
+    </script>
+</body>
+</html>

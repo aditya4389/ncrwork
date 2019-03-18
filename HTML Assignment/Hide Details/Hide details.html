@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/43CD34DD-FAC2-6747-8DE1-BBFA2C2705DE/main.js" charset="UTF-8"></script>
+    <script src="jquery-3.3.1.js">
+    </script>
+</head>
+<body>
+    <pre>
+    <div>
+    <b><p>Present address</p></b>
+	H.No:       <input type="text" id="hno" /><br />
+	Area:       <input type="text" id="area" /><br />
+	Mandal:     <input type="text" id="mandal" /><br />
+	District:   <input type="text" id="district" /><br />
+	State:      <input type="text" id="state" /><br />
+	</div>
+    <input id="btn" type="button" value="Hide" />
+	</pre>
+    <script>
+	$("#btn").click(function(){
+		if($("#btn").val()==="Hide"){
+			$("div").hide();
+			$("#btn").attr("value","Show");
+		}
+		else{
+			$("div").show();
+			$("#btn").attr("value","Hide");
+		}
+	});
+    </script>
+</body>
+</html>

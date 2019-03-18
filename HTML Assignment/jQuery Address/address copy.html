@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/43CD34DD-FAC2-6747-8DE1-BBFA2C2705DE/main.js" charset="UTF-8"></script>
+    <script src="jquery-3.3.1.js">
+    </script>
+</head>
+<body>
+    <pre>
+    <b><h2>Present address</h2></b>
+	H.No:       <input type="text" id="hno"></input><br />
+	Area:       <input type="text" id="area" /><br />
+	Mandal:     <input type="text" id="mandal" /><br />
+	District:   <input type="text" id="district" /><br />
+	State:      <input type="text" id="state" /><br />
+    <b><h2>Permanent address</h2></b>
+    <input type="checkbox" id="checkbtn">Same as above</input><br /><br />
+	H.No:       <input type="text" id="phno"></input><br />
+	Area:       <input type="text" id="parea" /><br />
+	Mandal:     <input type="text" id="pmandal" /><br />
+	District:   <input type="text" id="pdistrict" /><br />
+	State:      <input type="text" id="pstate" /><br />
+	</pre>
+    <script>
+		$("#checkbtn").click(function(){
+		if($(this).is(":checked")){
+			$("#phno").val($("#hno").val());
+			$("#phno").prop("disabled",true);
+			$("#parea").val($("#area").val());
+			$("#parea").prop("disabled",true);
+			$("#pmandal").val($("#mandal").val());
+			$("#pmandal").prop("disabled",true);
+			$("#pdistrict").val($("#district").val());
+			$("#pdistrict").prop("disabled",true);
+			$("#pstate").val($("#state").val());
+			$("#pstate").prop("disabled",true);
+		}
+		else if($(this).is(":not(:checked)")){
+			$("#phno").prop("disabled",false);
+			$("#parea").prop("disabled",false);
+			$("#pmandal").prop("disabled",false);
+			$("#pdistrict").prop("disabled",false);
+			$("#pstate").prop("disabled",false);
+			$("#phno").val("");
+			$("#parea").val("");
+			$("#pmandal").val("");
+			$("#pdistrict").val("");
+			$("#pstate").val("");
+		}
+		});
+    </script>
+</body>
+</html>

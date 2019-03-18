@@ -30,7 +30,9 @@ void InfixToPostfix(string str)
 	for (int i = 0; i < str.length(); i++)
 	{
 		if (isalpha(str[i]))
-			cout << str[i];
+		{
+		}
+			//cout << str[i];
 		else
 		{
 
@@ -47,6 +49,7 @@ void InfixToPostfix(string str)
 						cout << s.top();
 						s.pop();
 					}
+					cout << "@";
 					s.pop();
 				}
 				else if (str[i] == ']')
@@ -56,6 +59,7 @@ void InfixToPostfix(string str)
 						cout << s.top();
 						s.pop();
 					}
+					cout << "@";
 					s.pop();
 				}
 				else if (str[i] == '}')
@@ -65,6 +69,7 @@ void InfixToPostfix(string str)
 						cout << s.top();
 						s.pop();
 					}
+					cout << "@";
 					s.pop();
 				}
 				else if (s.empty())
@@ -81,6 +86,7 @@ void InfixToPostfix(string str)
 						cout << s.top();
 						s.pop();
 					}
+					cout << "@";
 					s.push(str[i]);
 				}
 			}
@@ -91,6 +97,7 @@ void InfixToPostfix(string str)
 		cout << s.top();
 		s.pop();
 	}
+	cout << "@";
 }
 
 int main()

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        function func() {
+            document.getElementById("ButtonId").addEventListener("click", function () {
+                document.getElementById("outputId").innerHTML = document.getElementById("textId").value;
+            });
+        }
+    </script>
+</head>
+<body>
+    <lable>Input: </lable>
+    <input type="text" id="textId" onclick="func()" /><br /><br />
+    <input type="button" value="Display" id="ButtonId" /><br /><br />
+    <lable>Output: </lable>
+    <output id="outputId"></output>
+
+</body>
+</html>

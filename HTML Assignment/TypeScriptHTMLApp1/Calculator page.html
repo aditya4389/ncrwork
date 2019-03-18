@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    
+    <script>
+        
+
+        function add()
+        {
+            var num1 = document.getElementById("number1").value;
+            var num2 = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = +num1 + +num2;
+        }
+
+        function sub()
+        {
+            var num1 = document.getElementById("number1").value;
+            var num2 = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = +num1 - +num2;
+        }
+        function mul()
+        {
+            var num1 = document.getElementById("number1").value;
+            var num2 = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = +num1 * +num2;
+        }
+        function div()
+        {
+            var num1 = document.getElementById("number1").value;
+            var num2 = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = +num1 / +num2;
+        }
+    </script>
+
+</head>
+<body align ="center">
+    <form action="POST" align ="center">
+        <label>Enter Number1: </label>
+        <input id="number1" type="number" required /><br /><br />
+        <label>Enter Number2: </label>
+        <input id="number2" type="number" required /><br /><br />
+        <input id="button+" type="button" value="+"  onclick="add()"/>
+        <input id="button-" value="-" type="button"  onclick="sub()"/>
+        <input id="button*" value="*" type="button"  onclick="mul()"/>
+        <input id="button/" value="/" type="button" onclick="div()"/><br /><br />
+        <label>Result: </label>
+        <output id="result"></output>    
+    </form>
+    
+
+</body>
+</html>
